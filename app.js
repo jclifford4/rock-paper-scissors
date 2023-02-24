@@ -109,7 +109,7 @@ buttons.forEach(button =>
 
 
 const scoresContainer = document.querySelector('#scores');
-scoresContainer.setAttribute('style', 'background: blue; min-height: 100; width: 200');
+// scoresContainer.setAttribute('style', 'background: blue; min-height: 100; width: 200');
 
 // body.append(scoresContainer);
 

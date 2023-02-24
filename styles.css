@@ -35,6 +35,8 @@ body
 
 .scores-container
 {
+    min-height: 100; 
+    width: 200;
     margin-top: 100px;
     display: flex;
     flex: 1;
@@ -59,19 +61,20 @@ body
     margin-top: 25px;
     display: flex;
     flex: 1;
-    justify-content: start;
-    width: 100%;
+    justify-content: space-between;
+    width: 800px;
 }
 
 #computer
 {
-    
+    justify-self: end;
+    margin-right: 10px;
    
 }
 #player
 {
-  margin-left: 320px;
-  padding-right: 465px; 
+   justify-self: start;
+   padding-left: 75px;
 }
 
 .player-names-container div
