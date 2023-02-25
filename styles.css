@@ -1,5 +1,4 @@
-*
-{
+* {
     font-family: 'Roboto', 'Times New Roman', Times, serif;
 }
 
@@ -14,8 +13,7 @@ body {
 
 }
 
-h1
-{
+h1 {
     color: antiquewhite;
 }
 
@@ -62,15 +60,13 @@ h1
     width: 800px;
 }
 
-.scores-container p:nth-child(1)
-{
-    padding-left: 30px;
+.scores-container p:nth-child(1) {
+    padding-left: 60px;
 }
 
 
-.scores-container p:nth-child(2)
-{
-    padding-right: 85px;
+.scores-container p:nth-child(2) {
+    padding-right: 60px;
 }
 
 .score {
@@ -83,7 +79,7 @@ h1
 }
 
 .player-names-container {
-    
+
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -92,22 +88,22 @@ h1
     display: flex;
     flex: 1;
     justify-content: space-between;
-    width: 800px;
+    width: 830px;
     color: white;
-    
-    
+
+
 }
 
 #computer {
     justify-self: end;
-    margin-right: 10px;
+    
     text-decoration: red underline;
 
 }
 
 #player {
     justify-self: start;
-    padding-left: 20px;
+    padding-left: 60px;
     text-decoration: green underline;
 }
 
@@ -127,36 +123,47 @@ button {
     padding: 0;
 }
 
+.select-display-container
+{
+    margin-bottom: 48px;
+}
 
 
-.select-display-container {
+.select-display-container,
+.history-container {
     
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: space-between;
     margin-top: 8px;
-
+    
+    
     width: 800px;
 }
 
-.select-display-container div {
+.history-container
+{
+    padding-bottom: 4px;
+    border-bottom: 1px solid white;
+    width: 300px;
+}
+.select-display-container div,
+.history-container div {
     height: 50px;
     width: 50px;
     background-color: aliceblue;
     border-radius: 50%;
+    
 
 }
 
-.player-display
-{
+.player-display {
     justify-self: start;
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
-.computer-display
-{
+.computer-display {
     justify-self: end;
-    margin-right: 80px;
+    margin-right: 60px;
 }
-

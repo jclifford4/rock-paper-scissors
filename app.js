@@ -55,8 +55,6 @@ function generateRoundOutcome(playerSelection, computerSelection) {
     return -1
 }
 
-
-
 function checkWinner(playerScore, computerScore, winValue)
 {
     console.log(playerScore);
@@ -139,19 +137,20 @@ h1.textContent = 'Select an option to begin!';
 function displayPlayerChoice(choice)
 {
     let imagePath = `./images/${choice.toLowerCase()}.png`;
-    // console.log(imagePath);
     playerSelectImg.src = imagePath;
-    // console.log(playerSelectImg.src);
     selectDisplays[0].appendChild(playerSelectImg);
 }
 
 function displayComputerChoice(choice)
 {
     let imagePath = `./images/${choice.toLowerCase()}.png`;
-    // console.log(imagePath);
     computerSelectImg.src = imagePath;
-    // console.log(computerSelectImg.src);
     selectDisplays[1].appendChild(computerSelectImg);
+}
+
+function getImageSourceFromChoice(choice)
+{
+    return `./images/${choice.toLowerCase()}.png`
 }
 
 
@@ -173,6 +172,31 @@ function playRound(e) {
     selectDisplayContainer.classList.add('select-display-container');
     h1.style.display = 'none';
 
+    const historyContainer = document.createElement('div');
+    historyContainer.classList.add('history-container');
+
+
+    const playerHistoryDiv = document.createElement('div');
+    const computerHistoryDiv = document.createElement('div');
+
+    const playerHistoryImg = document.createElement('img');
+    const computerHistoryImg = document.createElement('img');
+
+    playerHistoryImg.src = getImageSourceFromChoice(playerChoice);
+    computerHistoryImg.src = getImageSourceFromChoice(computerChoice);
+    console.log(playerHistoryImg.src);
+
+
+    playerHistoryDiv.appendChild(playerHistoryImg);
+    computerHistoryDiv.appendChild(computerHistoryImg);
+
+    historyContainer.appendChild(playerHistoryDiv);
+    historyContainer.appendChild(computerHistoryDiv);
+    body.appendChild(historyContainer);
+
+
+    
+
     
     
 
@@ -191,9 +215,13 @@ function playRound(e) {
 
     var gameWinner = checkWinner(playerScoreVal, computerScoreVal, winScore);
     
-    if (gameWinner !== undefined)
-        resultDiv.textContent = `${gameWinner}`;
-    body.appendChild(resultDiv);
+    if (gameWinner !== undefined){
+        
+        h1.textContent = `${gameWinner}`;
+        h1.style.display = 'block';
+    }
+    
+    // body.appendChild(resultDiv);
 }
 
 
