@@ -9,6 +9,9 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 
 
 }
@@ -23,13 +26,13 @@ h1 {
     justify-content: space-around;
     align-items: center;
     gap: 128px;
-    /* border: 1px blue solid; */
-    background-color: rgba(45, 34, 80, .4);
-    margin-top: 100px;
-    min-height: 200px;
+    background-color: rgba(255, 255, 255, 0.877);
+    margin-top: 50px;
+    max-height: 180px;
     min-width: 800px;
     border-radius: 50px;
     box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.5);
+    border: silver 2px solid;
 
 }
 
@@ -38,6 +41,7 @@ h1 {
     width: 150px;
     font-size: 32px;
     border-radius: 50%;
+    box-shadow: 10px 5px 5px rgba(109, 107, 110, 0.548);
 
 
 }
@@ -51,17 +55,20 @@ h1 {
 .scores-container {
     min-height: 100;
     width: 200;
-    margin-top: 100px;
+    margin-top:50px;
+    max-height: 100px;
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: space-between;
     gap: 524px;
     width: 800px;
+    
 }
 
 .scores-container p:nth-child(1) {
     padding-left: 60px;
+    
 }
 
 
@@ -75,7 +82,7 @@ h1 {
     height: 50px;
     text-align: center;
     margin: 0;
-    color: white;
+    color: antiquewhite;
 }
 
 .player-names-container {
@@ -89,7 +96,7 @@ h1 {
     flex: 1;
     justify-content: space-between;
     width: 830px;
-    color: white;
+    color: antiquewhite;
 
 
 }
@@ -109,6 +116,11 @@ h1 {
 
 .player-names-container div {
     font-size: 50px;
+}
+
+.vs-txt
+{
+    margin-left: 70px;
 }
 
 img {
@@ -147,6 +159,7 @@ button {
     padding-bottom: 4px;
     border-bottom: 1px solid white;
     width: 300px;
+    
 }
 .select-display-container div {
     height: 50px;
@@ -177,6 +190,8 @@ button {
     margin-right: 60px;
 }
 
+
+
 .history-container div:nth-child(2)
 {
     display: flex;
@@ -186,6 +201,7 @@ button {
     align-items: center;
     font-size: 24px;
     text-decoration: underline;
+    
 }
 
 .win
@@ -195,10 +211,70 @@ button {
 
 .tie
 {
-    color: whitesmoke;
+    color: antiquewhite;
 }
 
 .lose
 {
     color: red;
 }
+
+
+.header
+{
+    min-height: 50px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(109, 107, 110, 0.2);
+}
+
+.title
+{
+    font-size: 24px;
+    max-width: 250px;
+    justify-content: center;
+    color: wheat;
+}
+
+
+.footer
+{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.877);
+    max-height: 50px;
+    margin-top: 50px;
+}
+
+.links
+{
+    list-style: none;
+    display: flex;
+    gap: 64px;
+    font-size: 18px;
+    color: black;
+    margin-left: -30px;
+    
+}
+
+a
+{
+    text-decoration: none;
+    color: rgb(30, 7, 51);
+    font-weight: 600;
+}
+
+.rounds-txt
+{
+    color:antiquewhite;
+    font-size: 32px;
+    padding: 0;
+    margin: 0;
+}
+
+

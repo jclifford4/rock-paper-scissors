@@ -3,7 +3,7 @@ A function that generates and returns rock, paper, or scissors.
 */
 function getComputerChoice(numberChoices = 3) {
     const choices = ['Rock', 'Paper', 'Scissors'];
-    // console.log(choices[Math.floor(Math.random() * numberChoices)]);
+    
     return choices[Math.floor(Math.random() * numberChoices)];
 }
 
@@ -20,17 +20,13 @@ function getPlayerChoice(e) {
     else if(choiceID === 3)
         playerSelection = 'Scissors';
 
-    console.log(`Choice: ${choiceID}`);
     
     return playerSelection;
-    // return button.innerText;
+    
 
 }
 
-// Logs The Score.
-function getScoreBoard(player, computer) {
-    console.log(`Player: ${player} \tComputer: ${computer}`);
-}
+
 
 // Rock Beats Scissors
 // Scissors Beats Paper
@@ -38,17 +34,17 @@ function getScoreBoard(player, computer) {
 function generateRoundOutcome(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        console.log(`Tie, ${playerSelection} and ${computerSelection} Are The Same`);
+        
         return -1;
     }
     else if (playerSelection === 'Rock' && computerSelection === 'Scissors'
         || (playerSelection === 'Paper' && computerSelection === 'Rock')
         || (playerSelection === 'Scissors' && computerSelection === 'Paper')) {
-        console.log(`You Win ${playerSelection} Beats ${computerSelection}`);
+        
         return 0;
     }
     else {
-        console.log(`You Lose ${playerSelection} Does Not Beat ${computerSelection}`);
+        
         return 1;
     }
 
@@ -57,7 +53,7 @@ function generateRoundOutcome(playerSelection, computerSelection) {
 
 function checkWinner(playerScore, computerScore, winValue)
 {
-    console.log(playerScore);
+    
     if (playerScore === winValue)
         return 'Congratulations, You Win!';
     else if (computerScore === winValue)
@@ -66,7 +62,7 @@ function checkWinner(playerScore, computerScore, winValue)
 
 function displayRoundWinResult(winner, element)
 {
-    console.log(winner);
+    
     if (winner === 0)
     {
         element.classList.add('win');
@@ -103,7 +99,7 @@ buttons.forEach(button =>{ button.classList.add('Choicebutton')});
 
 
 // Button Listener for all buttons
-console.log(buttons);
+
 buttons.forEach(button => {
 
     button.addEventListener('click', playRound);
@@ -128,17 +124,17 @@ scoresContainer.appendChild(computerScore);
 const selectDisplayContainer = document.querySelector('.display');
 
 
-console.log(selectDisplayContainer);
+
 
 
 
 const selectDisplays = document.querySelectorAll('.display div');
-// console.log(selectDisplays);
+
 
 const playerSelectImg = document.createElement('img');
 const computerSelectImg = document.createElement('img');
 
-// console.log(selectDisplays[0]);
+
 
 const h1 = document.querySelector('h1');
 h1.textContent = 'Select an option to begin!';
@@ -174,7 +170,9 @@ function getImageSourceFromChoice(choice)
 }
 
 
-
+// Hide the rounds <p> until a round is played.
+const roundsTxt = document.querySelector('.rounds-txt');
+roundsTxt.style.display = 'none';
 
 var playerScoreVal = 0;
 var computerScoreVal = 0;
@@ -191,6 +189,11 @@ function playRound(e) {
     displayComputerChoice(computerChoice);
     selectDisplayContainer.classList.add('select-display-container');
     h1.style.display = 'none';
+
+
+
+
+
 
     const historyContainer = document.createElement('div');
     historyContainer.classList.add('history-container');
@@ -211,7 +214,7 @@ function playRound(e) {
     playerHistoryImg.src = getImageSourceFromChoice(playerChoice);
     computerHistoryImg.src = getImageSourceFromChoice(computerChoice);
     
-    console.log(playerHistoryImg.src);
+    
 
 
     playerHistoryDiv.appendChild(playerHistoryImg);
@@ -221,7 +224,12 @@ function playRound(e) {
     historyContainer.appendChild(roundResultDiv);
     historyContainer.appendChild(computerHistoryDiv);
 
-    body.appendChild(historyContainer);
+
+
+    const footer = document.querySelector('.footer');
+
+    roundsTxt.style.display = 'block';
+    footer.before(historyContainer);
     
 
 
@@ -233,7 +241,7 @@ function playRound(e) {
 
     var roundWinner = generateRoundOutcome(playerChoice, computerChoice);
     roundResultDiv.textContent = displayRoundWinResult(roundWinner, roundResultDiv);
-    console.log(roundWinner);
+    
     
     // Increment scores.
     if (roundWinner === 0)
