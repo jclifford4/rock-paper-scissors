@@ -1,6 +1,5 @@
-/*
-A function that generates and returns rock, paper, or scissors.
-*/
+
+//A function that generates and returns rock, paper, or scissors.
 function getComputerChoice(numberChoices = 3) {
     const choices = ['Rock', 'Paper', 'Scissors'];
     
@@ -22,10 +21,7 @@ function getPlayerChoice(e) {
 
     
     return playerSelection;
-    
-
 }
-
 
 
 // Rock Beats Scissors
@@ -53,7 +49,6 @@ function generateRoundOutcome(playerSelection, computerSelection) {
 
 function checkWinner(playerScore, computerScore, winValue)
 {
-    
     if (playerScore === winValue)
         return 'Congratulations, You Win!';
     else if (computerScore === winValue)
@@ -79,14 +74,8 @@ function displayRoundWinResult(winner, element)
     return 'Tie';
 }
 
-
-
-
-
-
-
+// Query the body
 const body = document.querySelector('#body');
-
 
 const resultDiv = document.createElement('div');
 resultDiv.classList.add('result');
@@ -95,17 +84,12 @@ resultDiv.setAttribute('style', 'width: 200; height: 100;');
 // Query All the buttons
 const buttons = document.querySelectorAll('button');
 
+// Add Classes to all buttons
 buttons.forEach(button =>{ button.classList.add('Choicebutton')});
 
 
 // Button Listener for all buttons
-
-buttons.forEach(button => {
-
-    button.addEventListener('click', playRound);
-    
-
-});
+buttons.forEach(button => button.addEventListener('click', playRound));
 
 const scoresContainer = document.querySelector('#scores');
 
@@ -123,30 +107,13 @@ scoresContainer.appendChild(computerScore);
 // Query all displays for miniChoice
 const selectDisplayContainer = document.querySelector('.display');
 
-
-
-
-
-
 const selectDisplays = document.querySelectorAll('.display div');
-
 
 const playerSelectImg = document.createElement('img');
 const computerSelectImg = document.createElement('img');
 
-
-
 const h1 = document.querySelector('h1');
 h1.textContent = 'Select an option to begin!';
-
-
-
-
-
-
-
-
-
 
 
 // Display the mini player choice
@@ -157,6 +124,7 @@ function displayPlayerChoice(choice)
     selectDisplays[0].appendChild(playerSelectImg);
 }
 
+// Display the mini computer choice
 function displayComputerChoice(choice)
 {
     let imagePath = `./images/${choice.toLowerCase()}.png`;
@@ -168,7 +136,6 @@ function getImageSourceFromChoice(choice)
 {
     return `./images/${choice.toLowerCase()}.png`
 }
-
 
 // Hide the rounds <p> until a round is played.
 const roundsTxt = document.querySelector('.rounds-txt');
@@ -190,11 +157,7 @@ function playRound(e) {
     selectDisplayContainer.classList.add('select-display-container');
     h1.style.display = 'none';
 
-
-
-
-
-
+    // Create content field for past rounds
     const historyContainer = document.createElement('div');
     historyContainer.classList.add('history-container');
 
@@ -209,14 +172,9 @@ function playRound(e) {
     const playerHistoryImg = document.createElement('img');
     const computerHistoryImg = document.createElement('img');
 
-
-
     playerHistoryImg.src = getImageSourceFromChoice(playerChoice);
     computerHistoryImg.src = getImageSourceFromChoice(computerChoice);
     
-    
-
-
     playerHistoryDiv.appendChild(playerHistoryImg);
     computerHistoryDiv.appendChild(computerHistoryImg);
 
@@ -224,24 +182,14 @@ function playRound(e) {
     historyContainer.appendChild(roundResultDiv);
     historyContainer.appendChild(computerHistoryDiv);
 
-
-
     const footer = document.querySelector('.footer');
 
     roundsTxt.style.display = 'block';
     footer.before(historyContainer);
     
 
-
-    
-
-    
-    
-
-
     var roundWinner = generateRoundOutcome(playerChoice, computerChoice);
     roundResultDiv.textContent = displayRoundWinResult(roundWinner, roundResultDiv);
-    
     
     // Increment scores.
     if (roundWinner === 0)
@@ -268,8 +216,6 @@ function playRound(e) {
     {
         buttons.forEach(button => button.removeEventListener('click', playRound));
     }
-    
-    // body.appendChild(resultDiv);
 }
 
 
