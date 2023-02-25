@@ -1,3 +1,9 @@
+*
+{
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
+}
+
+
 body {
     display: flex;
     flex: 1;
@@ -6,6 +12,11 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
 
 
+}
+
+h1
+{
+    color: antiquewhite;
 }
 
 .button-container {
@@ -35,7 +46,8 @@ body {
 
 .result {
     font-size: 50px;
-    background-color: yellow;
+    color: white;
+    margin-top: 8px;
 }
 
 .scores-container {
@@ -47,6 +59,18 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 524px;
+    width: 800px;
+}
+
+.scores-container p:nth-child(1)
+{
+    padding-left: 30px;
+}
+
+
+.scores-container p:nth-child(2)
+{
+    padding-right: 85px;
 }
 
 .score {
@@ -59,7 +83,10 @@ body {
 }
 
 .player-names-container {
-    border: 1px solid green;
+    
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
 
     margin-top: 25px;
     display: flex;
@@ -67,24 +94,28 @@ body {
     justify-content: space-between;
     width: 800px;
     color: white;
+    
+    
 }
 
 #computer {
     justify-self: end;
     margin-right: 10px;
+    text-decoration: red underline;
 
 }
 
 #player {
     justify-self: start;
-    padding-left: 75px;
+    padding-left: 20px;
+    text-decoration: green underline;
 }
 
 .player-names-container div {
     font-size: 50px;
 }
 
-.button-container img {
+img {
     width: 100%;
     object-fit: fill;
     border-radius: 50%;
@@ -96,8 +127,10 @@ button {
     padding: 0;
 }
 
+
+
 .select-display-container {
-    border: 1px red dashed;
+    
     display: flex;
     flex: 1;
     align-items: center;
@@ -112,15 +145,13 @@ button {
     width: 50px;
     background-color: aliceblue;
     border-radius: 50%;
-    
-
 
 }
 
 .player-display
 {
     justify-self: start;
-    margin-left: 90px;
+    margin-left: 30px;
 }
 
 .computer-display
@@ -128,3 +159,4 @@ button {
     justify-self: end;
     margin-right: 80px;
 }
+

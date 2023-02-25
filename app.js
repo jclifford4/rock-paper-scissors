@@ -13,16 +13,6 @@ function getPlayerChoice(e) {
     let choiceID = e.target.id;
     let playerSelection;
     
-    // while ((playerSelection !== 'Rock' ||
-    //     playerSelection !== 'Paper' ||
-    //     playerSelection !== 'Scissors')) {
-    //     if (playerSelection === 'Rock' ||
-    //         playerSelection === 'Paper' ||
-    //         playerSelection === 'Scissors') {
-    //         return playerSelection;
-    //     }
-    //     // playerSelection = prompt("Type 'Rock', 'Paper', or 'Scissors'!");
-    // }
     if (choiceID === 1)
         playerSelection =  'Rock';
     else if(choiceID === 2)
@@ -65,23 +55,15 @@ function generateRoundOutcome(playerSelection, computerSelection) {
     return -1
 }
 
-// Returns the 
-// function getWinner(playerScore, computerScore) {
-//     if (playerScore > computerScore)
-//         return 'Player Wins!';
-//     else if (computerScore > playerScore)
-//         return 'Computer Wins!';
-//     else
-//         return "Tie!";
-// }
+
 
 function checkWinner(playerScore, computerScore, winValue)
 {
     console.log(playerScore);
     if (playerScore === winValue)
-        return 'Congratulation, You Win!';
+        return 'Congratulations, You Win!';
     else if (computerScore === winValue)
-        return 'Sorry, Computer Wins!';
+        return 'Sorry, Computer Wins...';
 }
 
 
@@ -99,21 +81,19 @@ resultDiv.setAttribute('style', 'width: 200; height: 100;');
 // Query All the buttons
 const buttons = document.querySelectorAll('button');
 
-buttons.forEach(button =>{ button.classList.add('Choicebutton')})
+buttons.forEach(button =>{ button.classList.add('Choicebutton')});
 
+
+// Button Listener for all buttons
 console.log(buttons);
-buttons.forEach(button => 
-        button.addEventListener('click', playRound));
+buttons.forEach(button => {
 
+    button.addEventListener('click', playRound);
+    
 
-
+});
 
 const scoresContainer = document.querySelector('#scores');
-// scoresContainer.setAttribute('style', 'background: blue; min-height: 100; width: 200');
-
-// body.append(scoresContainer);
-
-
 
 
 const playerScore = document.createElement('p');
@@ -122,22 +102,28 @@ const computerScore = document.createElement('p');
 playerScore.classList.add('score');
 computerScore.classList.add('score');
 
-// playerScore.textContent = 'Score';
-// computerScore.textContent = 'Score';
-
-
 scoresContainer.appendChild(playerScore);
 scoresContainer.appendChild(computerScore);
 
         
+// Query all displays for miniChoice
+const selectDisplayContainer = document.querySelector('.display');
 
-const selectDisplays = document.querySelectorAll('.select-display-container div');
-console.log(selectDisplays);
+
+console.log(selectDisplayContainer);
+
+
+
+const selectDisplays = document.querySelectorAll('.display div');
+// console.log(selectDisplays);
 
 const playerSelectImg = document.createElement('img');
 const computerSelectImg = document.createElement('img');
 
-console.log(selectDisplays[0]);
+// console.log(selectDisplays[0]);
+
+const h1 = document.querySelector('h1');
+h1.textContent = 'Select an option to begin!';
 
 
 
@@ -149,10 +135,24 @@ console.log(selectDisplays[0]);
 
 
 
+// Display the mini player choice
+function displayPlayerChoice(choice)
+{
+    let imagePath = `./images/${choice.toLowerCase()}.png`;
+    // console.log(imagePath);
+    playerSelectImg.src = imagePath;
+    // console.log(playerSelectImg.src);
+    selectDisplays[0].appendChild(playerSelectImg);
+}
 
-
-
-
+function displayComputerChoice(choice)
+{
+    let imagePath = `./images/${choice.toLowerCase()}.png`;
+    // console.log(imagePath);
+    computerSelectImg.src = imagePath;
+    // console.log(computerSelectImg.src);
+    selectDisplays[1].appendChild(computerSelectImg);
+}
 
 
 
@@ -167,9 +167,18 @@ function playRound(e) {
     var running = true;
 
     playerChoice = e.target.id;
+    displayPlayerChoice(playerChoice);
     computerChoice = getComputerChoice();
+    displayComputerChoice(computerChoice);
+    selectDisplayContainer.classList.add('select-display-container');
+    h1.style.display = 'none';
+
+    
+    
+
 
     var roundWinner = generateRoundOutcome(playerChoice, computerChoice);
+    
 
     if (roundWinner === 0)
         ++playerScoreVal;
