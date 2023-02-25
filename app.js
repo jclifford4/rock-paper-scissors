@@ -90,7 +90,7 @@ function checkWinner(playerScore, computerScore, winValue)
 
 
 const body = document.querySelector('#body');
-body.setAttribute('style', 'background: grey;');
+
 
 const resultDiv = document.createElement('div');
 resultDiv.classList.add('result');
@@ -130,11 +130,37 @@ scoresContainer.appendChild(playerScore);
 scoresContainer.appendChild(computerScore);
 
         
-        
+
+const selectDisplays = document.querySelectorAll('.select-display-container div');
+console.log(selectDisplays);
+
+const playerSelectImg = document.createElement('img');
+const computerSelectImg = document.createElement('img');
+
+console.log(selectDisplays[0]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var playerScoreVal = 0;
 var computerScoreVal = 0;
        
-        // The Loop of the Game.
+// The Loop of the Game.
 function playRound(e) {
     
     var winScore = 5;

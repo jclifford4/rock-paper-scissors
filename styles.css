@@ -1,41 +1,45 @@
-body
-{
+body {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
-    
+    background-color: rgba(0, 0, 0, 0.9);
+
+
 }
 
-.button-container
-{
+.button-container {
     display: flex;
     flex: 1;
     justify-content: space-around;
     align-items: center;
     gap: 128px;
-    border: 1px black solid;
-   
+    /* border: 1px blue solid; */
+    background-color: rgba(45, 34, 80, .4);
     margin-top: 250px;
+    min-height: 200px;
+    min-width: 800px;
+    border-radius: 50px;
+    box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.5);
+
 }
 
-.button-container button
-{
+.button-container button {
     height: 150px;
     width: 150px;
     font-size: 32px;
     border-radius: 50%;
+
+
 }
 
-.result
-{
+.result {
     font-size: 50px;
     background-color: yellow;
 }
 
-.scores-container
-{
-    min-height: 100; 
+.scores-container {
+    min-height: 100;
     width: 200;
     margin-top: 100px;
     display: flex;
@@ -45,17 +49,16 @@ body
     gap: 524px;
 }
 
-.score
-{
+.score {
     font-size: 50px;
     width: 50px;
     height: 50px;
     text-align: center;
     margin: 0;
+    color: white;
 }
 
-.player-names-container
-{   
+.player-names-container {
     border: 1px solid green;
 
     margin-top: 25px;
@@ -63,36 +66,65 @@ body
     flex: 1;
     justify-content: space-between;
     width: 800px;
+    color: white;
 }
 
-#computer
-{
+#computer {
     justify-self: end;
     margin-right: 10px;
-   
-}
-#player
-{
-   justify-self: start;
-   padding-left: 75px;
+
 }
 
-.player-names-container div
-{
+#player {
+    justify-self: start;
+    padding-left: 75px;
+}
+
+.player-names-container div {
     font-size: 50px;
 }
 
-.button-container img
-{
+.button-container img {
     width: 100%;
     object-fit: fill;
     border-radius: 50%;
-    
+
 }
 
-button
-{
+button {
     margin: 0;
     padding: 0;
 }
 
+.select-display-container {
+    border: 1px red dashed;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+
+    width: 800px;
+}
+
+.select-display-container div {
+    height: 50px;
+    width: 50px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    
+
+
+}
+
+.player-display
+{
+    justify-self: start;
+    margin-left: 90px;
+}
+
+.computer-display
+{
+    justify-self: end;
+    margin-right: 80px;
+}
