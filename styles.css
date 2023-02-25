@@ -25,7 +25,7 @@ h1 {
     gap: 128px;
     /* border: 1px blue solid; */
     background-color: rgba(45, 34, 80, .4);
-    margin-top: 250px;
+    margin-top: 100px;
     min-height: 200px;
     min-width: 800px;
     border-radius: 50px;
@@ -148,14 +148,23 @@ button {
     border-bottom: 1px solid white;
     width: 300px;
 }
-.select-display-container div,
-.history-container div {
+.select-display-container div {
     height: 50px;
     width: 50px;
     background-color: aliceblue;
     border-radius: 50%;
-    
+}
 
+.picture-container
+{
+    height: 40px;
+    width: 40px;
+    
+}
+
+.picture-container img
+{
+    opacity: .8;
 }
 
 .player-display {
@@ -166,4 +175,30 @@ button {
 .computer-display {
     justify-self: end;
     margin-right: 60px;
+}
+
+.history-container div:nth-child(2)
+{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.win
+{
+    color: green;
+}
+
+.tie
+{
+    color: whitesmoke;
+}
+
+.lose
+{
+    color: red;
 }

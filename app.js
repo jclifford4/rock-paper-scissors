@@ -64,6 +64,26 @@ function checkWinner(playerScore, computerScore, winValue)
         return 'Sorry, Computer Wins...';
 }
 
+function displayRoundWinResult(winner, element)
+{
+    console.log(winner);
+    if (winner === 0)
+    {
+        element.classList.add('win');
+        return 'W';
+
+    }
+    else if (winner === 1)
+    {
+        element.classList.add('lose');
+        return 'L';
+    }
+
+    element.classList.add('tie');
+    return 'Tie';
+}
+
+
 
 
 
@@ -178,12 +198,19 @@ function playRound(e) {
 
     const playerHistoryDiv = document.createElement('div');
     const computerHistoryDiv = document.createElement('div');
+    const roundResultDiv = document.createElement('div');
+
+    playerHistoryDiv.classList.add('picture-container');
+    computerHistoryDiv.classList.add('picture-container');
 
     const playerHistoryImg = document.createElement('img');
     const computerHistoryImg = document.createElement('img');
 
+
+
     playerHistoryImg.src = getImageSourceFromChoice(playerChoice);
     computerHistoryImg.src = getImageSourceFromChoice(computerChoice);
+    
     console.log(playerHistoryImg.src);
 
 
@@ -191,8 +218,11 @@ function playRound(e) {
     computerHistoryDiv.appendChild(computerHistoryImg);
 
     historyContainer.appendChild(playerHistoryDiv);
+    historyContainer.appendChild(roundResultDiv);
     historyContainer.appendChild(computerHistoryDiv);
+
     body.appendChild(historyContainer);
+    
 
 
     
@@ -202,23 +232,33 @@ function playRound(e) {
 
 
     var roundWinner = generateRoundOutcome(playerChoice, computerChoice);
+    roundResultDiv.textContent = displayRoundWinResult(roundWinner, roundResultDiv);
+    console.log(roundWinner);
     
-
+    // Increment scores.
     if (roundWinner === 0)
         ++playerScoreVal;
     else if (roundWinner === 1)
         ++computerScoreVal;
 
-
+    // Update element with the associated score.
     playerScore.textContent = `${playerScoreVal}`;
     computerScore.textContent = `${computerScoreVal}`;
 
     var gameWinner = checkWinner(playerScoreVal, computerScoreVal, winScore);
     
+    // Display the Game Winner.
     if (gameWinner !== undefined){
         
         h1.textContent = `${gameWinner}`;
         h1.style.display = 'block';
+        h1.style.fontSize = '70px';
+    }
+
+    // Remove Listener if round cap has been reached.
+    if (playerScoreVal === winScore || computerScoreVal === winScore)
+    {
+        buttons.forEach(button => button.removeEventListener('click', playRound));
     }
     
     // body.appendChild(resultDiv);
