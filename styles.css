@@ -276,4 +276,13 @@ a
     margin: 0;
 }
 
+.total-history
+{
+    display: flex;
+    flex-direction: column-reverse;
+    
+    width: 300px;
+    
+}
+
 

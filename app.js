@@ -161,7 +161,7 @@ function playRound(e) {
     const historyContainer = document.createElement('div');
     historyContainer.classList.add('history-container');
 
-
+    const totalHistoryDiv = document.querySelector('.total-history');
     const playerHistoryDiv = document.createElement('div');
     const computerHistoryDiv = document.createElement('div');
     const roundResultDiv = document.createElement('div');
@@ -181,11 +181,12 @@ function playRound(e) {
     historyContainer.appendChild(playerHistoryDiv);
     historyContainer.appendChild(roundResultDiv);
     historyContainer.appendChild(computerHistoryDiv);
+    totalHistoryDiv.appendChild(historyContainer);
 
     const footer = document.querySelector('.footer');
 
     roundsTxt.style.display = 'block';
-    footer.before(historyContainer);
+    footer.before(totalHistoryDiv);
     
 
     var roundWinner = generateRoundOutcome(playerChoice, computerChoice);
