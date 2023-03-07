@@ -285,4 +285,14 @@ a
     
 }
 
+/* For Later
+.fa-github {
+  color: var(--primary-dark);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
 
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+*/
