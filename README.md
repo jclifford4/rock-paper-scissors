@@ -1,7 +1,7 @@
 # Simple Calculator
 
 ### Description
-A web based calculator application.
+Rock Paper Scissors web application
 
 # How To Play
 * Rock beats Scissors
