@@ -1,4 +1,4 @@
-# Simple Calculator
+# Rock Paper Scissors
 
 ### Description
 Rock Paper Scissors web application
