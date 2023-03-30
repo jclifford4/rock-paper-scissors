@@ -1,4 +1,5 @@
 # Rock Paper Scissors
+## [Live Preview](https://jclifford4.github.io/rock-paper-scissors/)
 
 ### Description
 Rock Paper Scissors web application
